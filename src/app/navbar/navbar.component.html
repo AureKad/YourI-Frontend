@@ -1,0 +1,66 @@
+<div class="bg-black text-center pt-2">
+  <div class="container">
+    <h3 class="header" @headerAnimation>
+      <span *ngFor="let word of header" class="text-white d-initial fw-bold" @fade>{{word + " "}}</span>
+    </h3>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-black">
+
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="../../assets/imgs/YI_logo.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav justify-content-end">
+        <li ngbDropdown class="nav-item">
+          <a class="nav-link dropdown-toggle text-white" ngbDropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ABOUT
+          </a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a ngbDropdownItem class="dropdown-item" href="#">Our Profile</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Our Mission</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Why Join Us</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Contact</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Team</a>
+          </div>
+        </li>
+        <li ngbDropdown class="nav-item">
+          <a class="nav-link dropdown-toggle text-white" ngbDropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            OUR PROJECTS
+          </a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a ngbDropdownItem class="dropdown-item" href="#">Our Unique Situation</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Emergency Projects</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Current Projects</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Feature Projects</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Future Projects</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Blog</a>
+          </div>
+        </li>
+        <li ngbDropdown class="nav-item">
+          <a class="nav-link dropdown-toggle text-white" ngbDropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            SUPPORT US
+          </a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a ngbDropdownItem class="dropdown-item" href="#">Donate</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Donation Use</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Contributors</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Shop</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Link To Us</a>
+            <a ngbDropdownItem class="dropdown-item" href="#">Act</a>
+          </div>
+        </li>
+        <li>
+          <button type="button" class="btn btn-outline-light">ENDANGERED LANGUAGES</button>
+        </li>
+      </ul> 
+    </div>
+  </div>
+</nav>
+
