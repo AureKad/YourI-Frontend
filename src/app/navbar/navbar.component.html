@@ -1,8 +1,9 @@
+
 <div class="bg-black text-center pt-2">
   <div class="container">
-    <h3 class="header" @headerAnimation>
+    <h2 class="header" @sentenceAnimation>
       <span *ngFor="let word of header" class="text-white d-initial fw-bold" @fade>{{word + " "}}</span>
-    </h3>
+    </h2>
   </div>
 </div>
 
@@ -57,7 +58,7 @@
           </div>
         </li>
         <li>
-          <button type="button" class="btn btn-outline-light">ENDANGERED LANGUAGES</button>
+          <button type="button" class="button">ENDANGERED LANGUAGES</button>
         </li>
       </ul> 
     </div>

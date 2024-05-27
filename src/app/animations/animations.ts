@@ -14,7 +14,7 @@ export let slide = trigger('slide', [
   ])
 ]);
 
-export let headerAnimation = trigger('headerAnimation', [
+export let sentenceAnimation = trigger('sentenceAnimation', [
   transition('void => *', [
     query('@fade', stagger(300, animateChild()))
   ])

@@ -1,0 +1,67 @@
+html, body {     
+  height: 100%;
+  overflow:scroll;
+}
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: $medium_Font;
+  font-weight: $medium_Weight;
+  line-height: $medium_Height;
+}
+
+.button {
+  background-color: black; 
+  border: 1px solid transparent;
+  color: white;
+  padding: 9px 47px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: $small_Font;
+  font-weight: $bolder_Weight;
+  transition-duration: 0.4s;
+
+  &:hover {
+    border: 1px solid black;
+    background-color: white;
+    color:black;
+  }
+}
+
+.button-white {
+  background-color: white; 
+  border: 1px solid black;
+  color: black;
+  padding: 9px 47px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: $small_Font;
+  font-weight: $bolder_Weight;
+
+  transition-duration: 0.4s;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.btn {
+  font-size: $medium_Font;
+}
+
+h1 {
+  font-size: $title_Font;
+  font-weight: $title_Weight;
+}
+
+h2 {
+  font-size: $subTitle_Font;
+  font-weight: $bolder_Weight;
+}
+
+h3 {
+  font-size: $larger_Font;
+}

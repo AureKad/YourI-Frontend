@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { fade, headerAnimation, slide } from '../animations/animations';
+import { fade, sentenceAnimation, slide } from '../animations/animations';
 
 @Component({
   selector: 'navbar',
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   animations: [
-    headerAnimation,
+    sentenceAnimation,
     fade
   ]
 })
@@ -17,6 +17,5 @@ export class NavbarComponent {
   header: string[];
   constructor() {
     this.header = this.headerStr.split(' ')
-    console.log(this.header);
   }
 }
