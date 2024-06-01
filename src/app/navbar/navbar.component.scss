@@ -1,13 +1,18 @@
 @import "../SCSS/init";
 
-.navbar-brand {
-  img {
-    width: 50px;
-  }
+.header-text {
+  color: $veryLightGray;
+}
+
+.logo {
+  width: 50px;
 }
 
 .navbar {
   font-size: $small_Font;
+  .nav-link {
+    color: $veryLightGray;
+  }
 }
 
 .navbar-nav > li{
@@ -23,13 +28,15 @@
   margin: 0;
 }
 
-.button {
-  border:1px solid white;
-  padding: 8px 24px;
-  font-weight: $medium_Weight;
-}
-
 .dropdown:hover .dropdown-menu {
   display: block;
   margin-top: 0; /* remove the gap so it doesn't close */
+}
+
+.dropdown-item {
+  transition-duration: 0.4s;
+}
+.dropdown-item:hover {
+  background-color: black;
+  color: $veryLightGray;
 }

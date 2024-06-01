@@ -1,0 +1,94 @@
+<div class="footer">
+  <div class="container">
+    <div class="row justify-content-between">
+
+      <!--
+        Left side (logo + newsletter-form)
+      -->
+      <div class="col-2">
+        <img src="../../assets/imgs/YI_logo.png" class="logo">
+        <div>
+          <form [formGroup]="form">
+            <div class="form-group newsletter">
+              <small class="newsletter__label" for="email">Subscribe to our newsletter:</small>
+              <div class="d-flex mt-4">
+                <input formControlName="email" id="email" type="text" class="form-control input-on-black" placeholder="Email...">
+                <button class="bi bi-check newsletter__check"></button>
+              </div>
+              <div class="alert alert-danger" *ngIf="email?.touched && email?.invalid">
+                <small *ngIf="email?.hasError('required')">Email is required</small>
+                <small *ngIf="email?.hasError('email')">Please provide a valid email address</small>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!--
+        Right side (header + Menus items)
+      -->
+
+      <div class="col-9">
+        <h2>JOINING HELPS LANGUAGES</h2>
+        <div class="row">
+          <div class="col">
+            <h3 class="menu__header">Join</h3>
+            <a href="" class="dropdown-item menu__item">Business Partnerships</a>
+            <a href="" class="dropdown-item menu__item">Become a Volunteer</a>
+          </div>
+          <div class="col">
+            <h3 class="menu__header">Donate</h3>
+            <a href="" class="dropdown-item menu__item">Donate Today</a>
+            <a href="" class="dropdown-item menu__item">Languages Fund</a>
+            <a href="" class="dropdown-item menu__item">Ways to Support</a>
+          </div>
+          <div class="col">
+            <h3 class="menu__header">Learn</h3>
+            <a href="" class="dropdown-item menu__item">About us</a>
+            <a href="" class="dropdown-item menu__item">Our Projects</a>
+            <a href="" class="dropdown-item menu__item">Our Team</a>
+            <a href="" class="dropdown-item menu__item">FAQs</a>
+          </div>
+          <div class="col">
+            <h3 class="menu__header">Connect</h3>
+            <a href="" class="dropdown-item menu__item">Contact us</a>
+            <a href="" class="dropdown-item menu__item">Jobs</a>
+            <a href="" class="dropdown-item menu__item">Annual Reports</a>
+            <a href="" class="dropdown-item menu__item">Map</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+      <!--
+        Bottom (Social Media)
+      -->
+      <div class="row justify-content-center my-5">
+        <div class="col-2 socials">
+          <a href="" class="bi bi-linkedin socials__icon"></a>
+          <label class="socials__label">Linkedin</label>
+        </div>
+        <div class="col-2 socials">
+          <a href="" class="bi bi-youtube socials__icon"></a>
+          <label class="socials__label">Youtube</label>
+        </div>
+        <div class="col-2 socials">
+          <a href="" class="bi bi-instagram socials__icon"></a>
+          <label class="socials__label">Instagram</label>
+        </div>
+        <div class="col-2 socials">
+          <a href="" class="bi bi-twitter socials__icon"></a>
+          <label class="socials__label">Twitter</label>
+        </div>
+      </div>
+
+      <div class="policy">
+        <span class="policy__header">Privacy Policy | Accessibility Statement | Terms of Use</span>
+        <span class="policy__legal">
+          Copyright 2024. Your I is a 501(c)[3]. All rights reserved. <br>
+          Your I and Your I logo are trademarks of Your I and are registered in Germany. <br>
+          EIN: 00-0000000  
+        </span>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<form [formGroup]="form" (ngSubmit)="save()">
+  <div class="form-group">
+    <label id="firstName" for="">First name*</label>
+    <input formControlName="firstName" id="firstName" type="text" class="form-control input-on-black">
+    <div class="alert alert-danger" *ngIf="firstName?.touched && firstName?.invalid">
+      First name is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label id="lastName" for="">Last name*</label>
+    <input formControlName="lastName" id="lastName" type="text" class="form-control input-on-black">
+    <div class="alert alert-danger" *ngIf="lastName?.touched && lastName?.invalid">
+      Last name is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label id="email" for="">Email*</label>
+    <input formControlName="email" id="email" type="text" class="form-control input-on-black">
+    <div class="alert alert-danger" *ngIf="email?.touched && email?.invalid">
+      <div *ngIf="email?.hasError('required')">Email is required</div>
+      <div *ngIf="email?.hasError('email')">Please provide a valid email address</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label id="company" for="">Company*</label>
+    <input formControlName="company" id="company" type="text" class="form-control input-on-black">
+    <div class="alert alert-danger" *ngIf="company?.touched && company?.invalid">
+      Company is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label id="optionalText" for="">Tell us abit about you and your desired partnership</label>
+    <textarea formControlName="optionalText" id="optionalText" type="text" class="form-control input-on-black" rows="3" ></textarea>
+  </div>
+  <div class="text-center">
+    <button class="button button-on-black" >Enter</button>
+  </div>
+</form>

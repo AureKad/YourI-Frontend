@@ -1,19 +1,19 @@
 html, body {     
   height: 100%;
-  overflow:scroll;
+  overflow-x: hidden;
 }
 body { 
   margin: 0; 
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: $medium_Font;
   font-weight: $medium_Weight;
-  line-height: $medium_Height;
+  line-height: $large_Height;
 }
 
 .button {
   background-color: black; 
   border: 1px solid transparent;
-  color: white;
+  color: $veryLightGray;
   padding: 9px 47px;
   text-align: center;
   text-decoration: none;
@@ -44,24 +44,57 @@ body {
 
   &:hover {
     background-color: black;
-    color: white;
+    color: $veryLightGray;
   }
+}
+
+.button-on-black {
+  border:1px solid $veryLightGray;
+  padding: 8px 24px;
+  font-weight: $medium_Weight;
 }
 
 .btn {
   font-size: $medium_Font;
 }
 
+.input-on-black {
+  background-color: black;
+  color: $veryLightGray;
+  border-radius: 0;
+  border: 1px solid $darkGray;
+  &::placeholder {
+    color: $veryLightGray;
+  }
+  &:focus {
+    background-color: black;
+    color: $veryLightGray;
+  }
+}
+
 h1 {
   font-size: $title_Font;
   font-weight: $title_Weight;
+  margin-bottom: 36px;
 }
 
 h2 {
+  margin-bottom: 24px;
   font-size: $subTitle_Font;
   font-weight: $bolder_Weight;
 }
 
 h3 {
   font-size: $larger_Font;
+  margin-bottom: 8px;
+  margin-top:12px;
+}
+
+small {
+  font-size: $small_Font;
+  line-height: $small_Height;
+}
+
+textarea {
+  resize: none;
 }
