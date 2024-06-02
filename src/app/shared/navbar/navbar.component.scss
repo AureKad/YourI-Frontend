@@ -1,8 +1,4 @@
-@import "../SCSS/init";
-
-.header-text {
-  color: $veryLightGray;
-}
+@import "../SCSS/variables";
 
 .logo {
   width: 50px;
@@ -24,8 +20,8 @@
   background-color: black !important;
 }
 
-.header {
-  margin: 0;
+.button {
+  font-size: $small_Font;
 }
 
 .dropdown:hover .dropdown-menu {

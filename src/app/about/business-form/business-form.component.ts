@@ -15,7 +15,7 @@ export class BusinessFormComponent {
       Validators.email
     ]),
     company: new FormControl('', Validators.required),
-    optionalText: new FormControl('', Validators.required)
+    optionalText: new FormControl('', )
   })
 
   get firstName() {

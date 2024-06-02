@@ -2,5 +2,35 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
-@import 'app/SCSS/init';
+@import 'app/shared/SCSS/init';
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+/* Register component country select style (needs global styling)*/
+.mdc-text-field {
+  background-color: black;
+  border-radius: 0 !important;
+  border: 1px solid $darkerGray;
+  color: $veryLightGray !important;
+  font-size: $medium_Font !important;
+  &::placeholder {
+    color: $mediumGray;
+  }
+  &:focus {
+    background-color: black;
+    color: $veryLightGray;
+  }
+}
+
+.mdc-text-field__input {
+  color: $veryLightGray !important;
+}
+
+.mat-mdc-floating-label {
+  color: $mediumGray !important;
+  font-size: $medium_Font !important;
+}

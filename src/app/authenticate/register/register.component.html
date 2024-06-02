@@ -1,0 +1,84 @@
+<section class="vh-100 register">
+  <div class="container-fluid h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100 ">
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form [formGroup]="form" (ngSubmit)="save()" autocomplete="disabled">
+
+          <!-- First and last name input -->
+          <div class="row mb-3">
+            <div class="form-group col">
+              <label for="firstName" class="form-label">First name*</label>
+              <input formControlName="firstName" id="firstName" type="text" class="form-control form-control-lg input-on-black"
+                placeholder="First name" [ngClass]="firstName?.touched && firstName?.invalid ? 'is-invalid' : ''">
+              <div *ngIf="firstName?.touched && firstName?.invalid">
+                <div *ngIf="firstName?.hasError('required')" class="invalid-feedback d-block">First name is required</div>
+              </div>
+            </div>
+            <div class="form-group col">
+              <label for="lastName" class="form-label">Last name</label>
+              <input formControlName="lastName" id="lastName" type="text" class="form-control form-control-lg input-on-black"
+                placeholder="Last name" [ngClass]="lastName?.touched && lastName?.invalid ? 'is-invalid' : ''">
+            </div>
+          </div>
+
+          <!-- Country select -->
+          <div class="mb-2">Country*</div>
+          <div class="form-group mb-0">
+            <mat-select-country 
+              class="className"
+              formControlName="country"
+              label="Select country"
+            >
+            </mat-select-country>
+          </div>
+
+          <!-- Email input -->
+          <div class="form-group mb-3">
+            <label for="email" class="form-label">Email*</label>
+            <input formControlName="email" id="email" type="text" class="form-control form-control-lg input-on-black"
+              placeholder="Enter a valid email address" [ngClass]="email?.touched && email?.invalid ? 'is-invalid' : ''">
+            <div *ngIf="email?.touched && email?.invalid">
+              <div *ngIf="email?.hasError('required')" class="invalid-feedback d-block">Email is required</div>
+              <div *ngIf="email?.hasError('email')" class="invalid-feedback d-block">Please provide a valid email address</div>
+            </div>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-group mb-3">
+            <label for="password" class="form-label">Password*</label>
+            <input formControlName="password" id="password" type="password" class="form-control form-control-lg input-on-black"
+              placeholder="Enter password " 
+              [ngClass]="password?.touched && password?.invalid || form.hasError('passwordsShouldMatch') && confirmPassword?.touched  ? 'is-invalid' : ''">
+            <div *ngIf="password?.touched && password?.invalid">
+              <div *ngIf="password?.hasError('required')" class="invalid-feedback d-block">Password is required</div>
+            </div>
+          </div>
+          <!-- Confirm password input -->
+          <div class="form-group mb-3">
+            <label for="confirmPassword" class="form-label">Confirm password*</label>
+            <input formControlName="confirmPassword" id="confirmPassword" type="password" class="form-control form-control-lg input-on-black"
+              placeholder="Confirm your Password " 
+              [ngClass]="confirmPassword?.touched && confirmPassword?.invalid || form.hasError('passwordsShouldMatch') && confirmPassword?.touched ? 'is-invalid' : ''">
+            <div *ngIf="confirmPassword?.touched && confirmPassword?.invalid">
+              <div *ngIf="confirmPassword?.hasError('required')" class="invalid-feedback d-block">Confirm password is required</div>
+            </div>
+            <div *ngIf="form.hasError('passwordsShouldMatch') && confirmPassword?.touched" class="invalid-feedback d-block">Passwords don't match</div>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="button button-on-black" [disabled]="!form.valid">Sign up</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Already have an Account? 
+              <a routerLink="/login" class="d-inline-block mx-2 link"> Login</a>
+            </p>
+          </div>
+
+        </form>
+      </div>
+
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="../../../assets/imgs/cartoon.png"
+          class="img-fluid" alt="Sample image">
+      </div>
+    </div>
+  </div>
+</section>

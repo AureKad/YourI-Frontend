@@ -1,30 +1,30 @@
 <form [formGroup]="form" (ngSubmit)="save()">
   <div class="form-group">
     <label id="firstName" for="">First name*</label>
-    <input formControlName="firstName" id="firstName" type="text" class="form-control input-on-black">
-    <div class="alert alert-danger" *ngIf="firstName?.touched && firstName?.invalid">
+    <input formControlName="firstName" id="firstName" type="text" class="form-control input-on-black" [ngClass]="firstName?.touched && firstName?.invalid ? 'is-invalid' : ''">
+    <div class="invalid-feedback" *ngIf="firstName?.touched && firstName?.invalid">
       First name is required.
     </div>
   </div>
   <div class="form-group">
     <label id="lastName" for="">Last name*</label>
-    <input formControlName="lastName" id="lastName" type="text" class="form-control input-on-black">
-    <div class="alert alert-danger" *ngIf="lastName?.touched && lastName?.invalid">
+    <input formControlName="lastName" id="lastName" type="text" class="form-control input-on-black" [ngClass]="lastName?.touched && lastName?.invalid ? 'is-invalid' : ''">
+    <div  class="invalid-feedback" *ngIf="lastName?.touched && lastName?.invalid">
       Last name is required.
     </div>
   </div>
   <div class="form-group">
     <label id="email" for="">Email*</label>
-    <input formControlName="email" id="email" type="text" class="form-control input-on-black">
-    <div class="alert alert-danger" *ngIf="email?.touched && email?.invalid">
-      <div *ngIf="email?.hasError('required')">Email is required</div>
-      <div *ngIf="email?.hasError('email')">Please provide a valid email address</div>
+    <input formControlName="email" id="email" type="text" class="form-control input-on-black" [ngClass]="email?.touched && email?.invalid ? 'is-invalid' : ''">
+    <div *ngIf="email?.touched && email?.invalid">
+      <div *ngIf="email?.hasError('required')" class="invalid-feedback d-block">Email is required</div>
+      <div *ngIf="email?.hasError('email')" class="invalid-feedback d-block">Please provide a valid email address</div>
     </div>
   </div>
   <div class="form-group">
     <label id="company" for="">Country*</label>
-    <input formControlName="country" id="country" type="text" class="form-control input-on-black">
-    <div class="alert alert-danger" *ngIf="country?.touched && country?.invalid">
+    <input formControlName="country" id="country" type="text" class="form-control input-on-black" [ngClass]="country?.touched && country?.invalid ? 'is-invalid' : ''">
+    <div  class="invalid-feedback" *ngIf="country?.touched && country?.invalid">
       Country is required.
     </div>
   </div>
@@ -34,6 +34,6 @@
   </div>
   
   <div class="text-center">
-    <button class="button button-on-black" >Enter</button>
+    <button class="button button-on-black" [disabled]="!form.valid">Enter</button>
   </div>
 </form>

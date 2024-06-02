@@ -25,7 +25,7 @@
     width: 48px;
     transition-duration: 0.4s;
   
-    &:hover {
+    &:hover:not([disabled]) {
       background-color: $darkGray;
     }
   }
@@ -49,14 +49,6 @@
 
 .socials {
   text-align: center;
-  &__icon {
-    color: white;
-    font-size: 30px;
-    transition-duration: 0.4s;
-    &:hover {
-      color: $darkerGray;
-    }
-  }
 
   &__label {
     display: block;

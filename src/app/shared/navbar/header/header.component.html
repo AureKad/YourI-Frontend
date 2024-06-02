@@ -1,0 +1,7 @@
+<div class="bg-black text-center pt-2 header-text">
+  <div class="container">
+    <h2 class="header" @sentenceAnimation>
+      <span *ngFor="let word of header" class="d-initial fw-bold" @fade>{{word + " "}}</span>
+    </h2>
+  </div>
+</div>

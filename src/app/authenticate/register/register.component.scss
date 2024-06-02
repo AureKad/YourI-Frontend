@@ -1,0 +1,31 @@
+@import "../../shared/SCSS/variables";
+
+.register {
+  background-color: black;
+  color: $veryLightGray;
+}
+
+button {
+  padding-left: 64px;
+  padding-right: 64px;
+}
+
+.link {
+  color: $lighterGray;
+  transition-duration: 0.4s;
+  &:hover {
+    color: $darkerGray;
+  }
+}
+
+.mat-select-panel {
+  color: $veryLightGray !important;
+  background-color: rgb(131, 111, 111);
+  padding: 32px;
+  border: 0;
+}
+
+
+
+//.mdc-text-field__input
+//.mat-mdc-text-field-wrapper

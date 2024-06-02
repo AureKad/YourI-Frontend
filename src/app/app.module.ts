@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { MissionComponent } from './about/mission/mission.component';
 import { VisionComponent } from './about/vision/vision.component';
@@ -18,8 +18,13 @@ import { ProfileComponent } from './about/profile/profile.component';
 import { VolunteerFormComponent } from './about/volunteer-form/volunteer-form.component';
 import { BusinessFormComponent } from './about/business-form/business-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FooterComponent } from './footer/footer.component';
 import { FormsComponent } from './about/forms/forms.component';
+import { LoginComponent } from './authenticate/login/login.component';
+import { RegisterComponent } from './authenticate/register/register.component';
+import { HeaderComponent } from './shared/navbar/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,10 @@ import { FormsComponent } from './about/forms/forms.component';
     VolunteerFormComponent,
     BusinessFormComponent,
     FooterComponent,
-    FormsComponent
+    FormsComponent,
+    LoginComponent,
+    RegisterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -45,10 +53,14 @@ import { FormsComponent } from './about/forms/forms.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    MatSelectCountryModule.forRoot('en'),
     RouterModule,
     RouterModule.forRoot([
       { path: '', component: AboutComponent},
-      { path: 'about', component: AboutComponent}
+      { path: 'about', component: AboutComponent},
+      { path: 'login', component: LoginComponent},
+      { path: 'register', component: RegisterComponent},
     ])
   ],
   providers: [provideAnimations()],

@@ -1,14 +1,6 @@
-
-<div class="bg-black text-center pt-2 header-text">
-  <div class="container">
-    <h2 class="header" @sentenceAnimation>
-      <span *ngFor="let word of header" class="d-initial fw-bold" @fade>{{word + " "}}</span>
-    </h2>
-  </div>
-</div>
+<navbar-header></navbar-header>
 
 <nav class="navbar navbar-expand-lg bg-black ">
-
   <div class="container">
     <a class="navbar-brand" href="#">
       <img src="../../assets/imgs/YI_logo.png" class="logo">
@@ -18,7 +10,7 @@
     </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav justify-content-end">
+      <ul class="navbar-nav">
         <li ngbDropdown class="nav-item">
           <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             ABOUT
@@ -61,7 +53,19 @@
         <li>
           <button type="button" class="button button-on-black">ENDANGERED LANGUAGES</button>
         </li>
+        <li ngbDropdown class="nav-item">
+          <a class="nav-link" routerLink="/login" aria-haspopup="true" aria-expanded="false">
+            LOGIN
+          </a>
+        </li>
+        <li ngbDropdown class="nav-item">
+          <a class="nav-link" routerLink="/register" aria-haspopup="true" aria-expanded="false">
+            SIGN UP
+          </a>
+        </li>
       </ul> 
+
+
     </div>
   </div>
 </nav>

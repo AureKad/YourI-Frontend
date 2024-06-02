@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { fade, sentenceAnimation } from '../../animations/animations';
+import { fade, sentenceAnimation } from '../../shared/animations/animations';
 
 @Component({
   selector: 'mission',

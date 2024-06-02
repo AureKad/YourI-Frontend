@@ -12,12 +12,13 @@
             <div class="form-group newsletter">
               <small class="newsletter__label" for="email">Subscribe to our newsletter:</small>
               <div class="d-flex mt-4">
-                <input formControlName="email" id="email" type="text" class="form-control input-on-black" placeholder="Email...">
-                <button class="bi bi-check newsletter__check"></button>
+                <input formControlName="email" id="email" type="text" class="form-control input-on-black" placeholder="Email..." 
+                  [ngClass]="email?.touched && email?.invalid ? 'is-invalid' : ''">
+                <button class="bi bi-check newsletter__check" [disabled]="!form.valid"></button>
               </div>
-              <div class="alert alert-danger" *ngIf="email?.touched && email?.invalid">
-                <small *ngIf="email?.hasError('required')">Email is required</small>
-                <small *ngIf="email?.hasError('email')">Please provide a valid email address</small>
+              <div *ngIf="email?.touched && email?.invalid">
+                <small *ngIf="email?.hasError('required')" class="invalid-feedback d-block">Email is required</small>
+                <small *ngIf="email?.hasError('email')" class="invalid-feedback d-block">Please provide a valid email address</small>
               </div>
             </div>
           </form>
