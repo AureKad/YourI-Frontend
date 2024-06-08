@@ -23,7 +23,7 @@
           <p class="text-center fw-bold mx-3 mb-0">Or</p>
         </div>
 
-        <form [formGroup]="form" (ngSubmit)="save()">
+        <form [formGroup]="form" (ngSubmit)="login()">
 
           <!-- Email input -->
           <div class="form-group mb-3">
@@ -40,7 +40,7 @@
           <div class="form-group mb-3">
             <label for="password" class="form-label">Password</label>
             <input formControlName="password" id="password" type="password" class="form-control form-control-lg input-on-black"
-              placeholder="Enter password " [ngClass]="password?.touched && password?.invalid ? 'is-invalid' : ''">
+              placeholder="Enter password " [ngClass]="password?.touched && password?.invalid? 'is-invalid' : ''">
             <div *ngIf="password?.touched && password?.invalid">
               <div *ngIf="password?.hasError('required')" class="invalid-feedback d-block">Password is required</div>
             </div>

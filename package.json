@@ -27,6 +27,7 @@
     "bootstrap-icons": "^1.11.3",
     "country-list": "^2.3.0",
     "flag-icon-css": "^3.5.0",
+    "jwt-decode": "^4.0.0",
     "ngx-mat-drm-countries-flags": "^3.0.1",
     "rxjs": "~7.8.0",
     "svg-country-flags": "^1.2.10",

@@ -4,5 +4,6 @@ export interface User {
   email: string;
   country: string;
   role: string;
+  enabled: boolean;
   token: string;
 }

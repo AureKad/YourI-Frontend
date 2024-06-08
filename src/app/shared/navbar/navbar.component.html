@@ -53,15 +53,22 @@
         <li>
           <button type="button" class="button button-on-black">ENDANGERED LANGUAGES</button>
         </li>
-        <li ngbDropdown class="nav-item">
-          <a class="nav-link" routerLink="/login" aria-haspopup="true" aria-expanded="false">
-            LOGIN
+        <li *ngIf="!jwtUser?.firstName" ngbDropdown class="nav-item">
+          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            USER
           </a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a ngbDropdownItem class="dropdown-item" routerLink="/login">Login</a>
+            <a ngbDropdownItem class="dropdown-item" routerLink="/register">Sign up</a>
+          </div>
         </li>
-        <li ngbDropdown class="nav-item">
-          <a class="nav-link" routerLink="/register" aria-haspopup="true" aria-expanded="false">
-            SIGN UP
+        <li *ngIf="jwtUser?.firstName" ngbDropdown class="nav-item">
+          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{jwtUser?.firstName}}
           </a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a ngbDropdownItem class="dropdown-item" (click)="logout()" routerLink="/">Logout</a>
+          </div>
         </li>
       </ul> 
 

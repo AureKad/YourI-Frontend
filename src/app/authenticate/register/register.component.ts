@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidationService } from '../../shared/services/validation.service';
+import { registrationData } from '../../shared/models/registrationData';
+import { UserService } from '../../shared/services/user.service';
+import { JWTTokenService } from '../../shared/services/jwttoken.service';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertDialogComponent } from '../../shared/alertdialog/alertdialog.component';
 
 @Component({
   selector: 'app-register',
@@ -21,6 +27,8 @@ export class RegisterComponent {
   }, {
     validators: ValidationService.passwordsShouldMatch
   })
+
+  constructor(private userService: UserService, public dialog: MatDialog) {}
 
 
   get firstName() {
@@ -48,10 +56,36 @@ export class RegisterComponent {
     return this.form.get('confirmPassword');
   }
 
-  save() {
+  register() {
+    /*
+
+    let headers = new HttpHeaders();
+    if (this.getAuthToken !== null) {
+      headers = headers.set("Authorization", "Bearer " + this.getAuthToken())
+    }
+*/
     let register = this.form.value;
     register.country = register.country.name;
-    console.log(register);
+    delete register['confirmPassword'];
+    let registerData = Object.assign({}, register) as registrationData;
+    this.userService.register(registerData).subscribe(() => 
+      {
+        this.dialog.open(AlertDialogComponent, {
+          data: {
+            message: 'Please verify your email before proceeding'
+          }
+        })
+      },
+      err => {
+        if (err.status == 400) {
+          throw new Error('An account with this email already exists');
+        } 
+        if (err.status == 403) {
+          throw new Error('Please reselect the Country');
+        }
+      }
+    );
   }
 
 }
+
