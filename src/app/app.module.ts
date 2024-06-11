@@ -31,7 +31,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ErrorHandlerService } from './shared/services/error-handler.service';
 import { loggedInGuard } from './shared/services/auth-guard.service';
-import { ActivateAccountComponent } from './authenticate/activate-account/activate-account.component';
+import { ActivateAccountComponent } from './authenticate/register/activate-account/activate-account.component';
+import { ResetPasswordComponent } from './authenticate/reset-password/reset-password.component';
+import { ForgotPasswordComponent } from './authenticate/forgot-password/forgot-password.component';
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
+import { environment } from '../environments/environment';
+import { CodeInputModule } from 'angular-code-input';
+import { VerifyComponent } from './authenticate/forgot-password/verify/verify.component';
+import { EnterCodeComponent } from './authenticate/forgot-password/enter-code/enter-code.component';
+import { NewPasswordComponent } from './authenticate/forgot-password/new-password/new-password.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +61,12 @@ import { ActivateAccountComponent } from './authenticate/activate-account/activa
     RegisterComponent,
     HeaderComponent,
     AlertDialogComponent,
-    ActivateAccountComponent
+    ActivateAccountComponent,
+    ResetPasswordComponent,
+    ForgotPasswordComponent,
+    VerifyComponent,
+    EnterCodeComponent,
+    NewPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -67,18 +80,28 @@ import { ActivateAccountComponent } from './authenticate/activate-account/activa
     MatDialogModule,
     MatIconModule,
     MatButtonModule,
+
+    RecaptchaV3Module,
+    CodeInputModule,
+
     RouterModule,
     RouterModule.forRoot([
       { path: '', component: AboutComponent},
       { path: 'about', component: AboutComponent},
+      { path: 'about/:comp', component: AboutComponent},
       { path: 'login', component: LoginComponent, canActivate: [loggedInGuard]},
+      { path: 'login/reset/password', component: ForgotPasswordComponent, canActivate: [loggedInGuard]},
       { path: 'register', component: RegisterComponent, canActivate: [loggedInGuard]},
-      { path: 'activate-account', component: ActivateAccountComponent},
+      { path: 'register/activate-account', component: ActivateAccountComponent},
     ])
   ],
   providers: [
     provideAnimations(),
-    { provide: ErrorHandler, useClass: ErrorHandlerService }
+    { provide: ErrorHandler, useClass: ErrorHandlerService },
+    {
+      provide: RECAPTCHA_V3_SITE_KEY,
+      useValue: environment.recaptcha.siteKey,
+    },
   ],
   bootstrap: [AppComponent]
 })

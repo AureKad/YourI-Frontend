@@ -1,0 +1,27 @@
+<section class="vh-100 activate">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="container text-center" *ngIf="submitted else codeForm">
+        <h2>Recovery failed!</h2>
+        <p>Token has expired or is invalid, a new token has been sent</p>
+        <button class="button button-on-black" (click)="submitted=false">Try again</button>
+    </div>
+
+    <ng-template #codeForm>
+        <div class="text-center" style="width: 400px">
+          <h2>Type your recovery code</h2>
+          <p>A recovery code has been sent to your email address</p>
+          <code-input [isCodeHidden]="false"
+                      [codeLength]="6"
+                      [code]="'number'"
+                      (codeCompleted)="onCodeCompleted($event)"
+                      class="code-input"
+          ></code-input>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <p class="small fw-bold mt-2 pt-1 mb-0">Remembered your Password?
+              <a routerLink="/login" class="d-inline-block mx-2 link">Back to Login</a>
+            </p>
+          </div>
+        </div>
+    </ng-template>
+  </div>
+</section>

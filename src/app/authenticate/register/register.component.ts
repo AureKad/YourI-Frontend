@@ -28,7 +28,7 @@ export class RegisterComponent {
     validators: ValidationService.passwordsShouldMatch
   })
 
-  constructor(private userService: UserService, public dialog: MatDialog) {}
+  constructor(private userService: UserService, private router: Router) {}
 
 
   get firstName() {
@@ -70,11 +70,7 @@ export class RegisterComponent {
     let registerData = Object.assign({}, register) as registrationData;
     this.userService.register(registerData).subscribe(() => 
       {
-        this.dialog.open(AlertDialogComponent, {
-          data: {
-            message: 'Please verify your email before proceeding'
-          }
-        })
+        this.router.navigate(["register","activate-account"])
       },
       err => {
         if (err.status == 400) {

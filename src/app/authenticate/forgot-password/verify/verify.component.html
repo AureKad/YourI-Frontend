@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)="sendRequest()">
+  <div class="form-group mb-3">
+    <h2>Password Recovery</h2>
+    <span>Enter the Email that is connected to your account</span>
+  </div>
+  <!-- Email input -->
+  <div class="form-group mb-3">
+    <input formControlName="email" id="email" type="text" class="form-control form-control-lg input-on-black"
+      placeholder="Enter a valid email address" [ngClass]="email?.touched && email?.invalid ? 'is-invalid' : ''">
+    <div *ngIf="email?.touched && email?.invalid">
+      <div *ngIf="email?.hasError('required')" class="invalid-feedback d-block">Email is required</div>
+      <div *ngIf="email?.hasError('email')" class="invalid-feedback d-block">Please provide a valid email address</div>
+    </div>
+  </div>
+
+
+
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="text-center text-lg-start mt-4 pt-2">
+      <button type="submit" class="button button-on-black" [disabled]="!form.valid">Send Mail</button>
+      <p class="small fw-bold mt-2 pt-1 mb-0">Remembered your Password?
+        <a routerLink="/login" class="d-inline-block mx-2 link">Back to Login</a>
+      </p>
+    </div>
+  </div>
+</form>

@@ -17,7 +17,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.jwtUser = this.jwtTokenService.getDecodeToken();
-    console.log(this.jwtUser);
   }
 
   logout() {

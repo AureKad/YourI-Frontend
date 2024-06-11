@@ -26,6 +26,18 @@ export class UserService {
     return this.http.get<void>(this.apiServerUrl + '/activate-account?token='+token);
   }
 
+  resetPasswordSendMail(email: string) {
+    return this.http.get<void>(this.apiServerUrl + '/send-recovery-email?email='+email);
+  }
+
+  activatePasswordRecovery(token: string, email: string) {
+    return this.http.get<void>(this.apiServerUrl + '/activate-password-recovery?token='+token+'&email='+email);
+  }
+
+  changePassword(authData: loginData) {
+    return this.http.post(this.apiServerUrl + '/change-password', authData);
+  }
+
   getAuthToken(): string | null {
     return localStorage.getItem("auth_token");
   }

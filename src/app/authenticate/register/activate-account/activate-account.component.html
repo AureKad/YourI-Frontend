@@ -1,0 +1,31 @@
+<section class="vh-100 activate">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="container text-center" *ngIf="submitted else codeForm">
+      <div class="activate-message" *ngIf="success else activationError">
+        <h2>Activation successful!</h2>
+        <p>Your account has been successfully activated</p>
+        <button class="button button-on-black" routerLink="/login">Go to Login</button>
+        
+      </div>
+      <ng-template #activationError>
+        <h2>Activation failed!</h2>
+        <p>Token has expired or is invalid</p>
+        <button class="button button-on-black" (click)="submitted=false">Try again</button>
+      </ng-template>
+    </div>
+
+    <ng-template #codeForm>
+        <div class="text-center" style="width: 400px">
+          <h2>Type your activation code</h2>
+          <p>An activation code has been sent to your email address</p>
+          <code-input [isCodeHidden]="false"
+                      [codeLength]="6"
+                      [code]="'number'"
+                      (codeCompleted)="onCodeCompleted($event)"
+                      class="code-input"
+          ></code-input>
+          <button class="button button-on-black mt-4" routerLink="/">Homepage</button>
+        </div>
+    </ng-template>
+  </div>
+</section>
