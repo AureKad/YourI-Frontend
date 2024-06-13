@@ -1,0 +1,29 @@
+<navbar></navbar>
+
+<div class="container my-5">
+  <p>
+    <input 
+      #query
+      (keyup)="filter(query.value)"
+      type="text" class="form-control" placeholder="Search by email...">
+  </p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Joined</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let volunteer of volunteers">
+        <td>{{volunteer.email}}</td>
+        <td>{{volunteer.firstName}} {{volunteer.lastName}}</td>
+        <td>{{volunteer.country}}</td>
+        <td>{{volunteer.createdAt | date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

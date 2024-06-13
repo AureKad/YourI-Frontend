@@ -18,9 +18,9 @@ export class JWTTokenService {
     let jwtToken = this.userService.getAuthToken();
     if (jwtToken != null) {
       return jwtDecode<JWT>(jwtToken);
-    } else {
-      return null;
-    }
+    } 
+    return null;
+    
   }
 
   isLoggedIn(): boolean {

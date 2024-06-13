@@ -1,0 +1,33 @@
+<navbar></navbar>
+
+<div class="container my-5">
+  <p>
+    <input 
+      #query
+      (keyup)="filter(query.value)"
+      type="text" class="form-control" placeholder="Search by email...">
+  </p>
+  <table mat-table></table>
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Optional message</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let partner of filteredPartners">
+        <td>{{partner.email}}</td>
+        <td>{{partner.firstName}} {{partner.lastName}}</td>
+        <td>{{partner.company}}</td>
+        <div class="shrinked" (click)="toggleClass($event.target)">{{partner.optionalText}}</div>
+        <td>{{partner.createdAt | date: 'short'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

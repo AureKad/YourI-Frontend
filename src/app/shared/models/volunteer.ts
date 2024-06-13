@@ -1,8 +1,7 @@
-export interface User {
+export interface Volunteer {
   firstName: string;
   lastName: string;
   email: string;
   country: string;
-  role: string;
-  token: string;
+  createdAt: any;
 }

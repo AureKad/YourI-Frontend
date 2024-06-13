@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Partner } from '../../shared/models/partner';
+import { PartnerService } from '../../shared/services/partner.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertDialogComponent } from '../../shared/alertdialog/alertdialog.component';
 
 @Component({
   selector: 'business-form',
@@ -17,6 +21,8 @@ export class BusinessFormComponent {
     company: new FormControl('', Validators.required),
     optionalText: new FormControl('', )
   })
+
+  constructor(private partnerService: PartnerService, public dialog: MatDialog) {}
 
   get firstName() {
     return this.form.get('firstName');
@@ -39,7 +45,19 @@ export class BusinessFormComponent {
   }
 
   save() {
-    let business = this.form.value;
-    console.log(business);
+    let partnerData = Object.assign({}, this.form.value) as Partner;
+    this.partnerService.becomePartners(partnerData).subscribe(
+      value => {
+        this.dialog.open(AlertDialogComponent, {
+          data: {
+            message: 'Form successfully sent'
+          }
+        })
+      },
+      error => {
+        console.log(error);
+        throw new Error('Something went wrong')
+      }
+    )
   }
 }

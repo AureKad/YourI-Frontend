@@ -21,7 +21,7 @@ export class RegisterComponent {
       Validators.required,
       Validators.email
     ]),
-    country: new FormControl<any>(null, Validators.required),
+    country: new FormControl<any>('', Validators.required),
     password: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required)
   }, {
@@ -68,6 +68,7 @@ export class RegisterComponent {
     register.country = register.country.name;
     delete register['confirmPassword'];
     let registerData = Object.assign({}, register) as registrationData;
+    console.log(registerData);
     this.userService.register(registerData).subscribe(() => 
       {
         this.router.navigate(["register","activate-account"])

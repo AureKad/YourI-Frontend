@@ -14,7 +14,6 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
       this.comp = this.route.snapshot.paramMap.get('comp');
       this.router.navigate(["/"]);
-      console.log(this.comp);
       if (this.comp) {
         const elem = document.getElementById(this.comp);
 

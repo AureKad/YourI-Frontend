@@ -1,6 +1,5 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -15,7 +14,6 @@ import { RouterModule, mapToCanActivate } from '@angular/router';
 import { FactsCardComponent } from './about/facts/facts-cards/facts-card.component';
 import { VisionCardsComponent } from './about/vision/vision-cards/vision-cards.component';
 import { ProfileComponent } from './about/profile/profile.component';
-import { VolunteerFormComponent } from './about/volunteer-form/volunteer-form.component';
 import { BusinessFormComponent } from './about/business-form/business-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormsComponent } from './about/forms/forms.component';
@@ -40,6 +38,9 @@ import { CodeInputModule } from 'angular-code-input';
 import { VerifyComponent } from './authenticate/forgot-password/verify/verify.component';
 import { EnterCodeComponent } from './authenticate/forgot-password/enter-code/enter-code.component';
 import { NewPasswordComponent } from './authenticate/forgot-password/new-password/new-password.component';
+import { PartnerViewComponent } from './admin/partner-view/partner-view.component';
+import { VolunteerViewComponent } from './admin/volunteer-view/volunteer-view.component';
+import { adminGuard } from './shared/services/admin-auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,6 @@ import { NewPasswordComponent } from './authenticate/forgot-password/new-passwor
     FactsCardComponent,
     VisionCardsComponent,
     ProfileComponent,
-    VolunteerFormComponent,
     BusinessFormComponent,
     FooterComponent,
     FormsComponent,
@@ -66,7 +66,9 @@ import { NewPasswordComponent } from './authenticate/forgot-password/new-passwor
     ForgotPasswordComponent,
     VerifyComponent,
     EnterCodeComponent,
-    NewPasswordComponent
+    NewPasswordComponent,
+    PartnerViewComponent,
+    VolunteerViewComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +94,10 @@ import { NewPasswordComponent } from './authenticate/forgot-password/new-passwor
       { path: 'login', component: LoginComponent, canActivate: [loggedInGuard]},
       { path: 'login/reset/password', component: ForgotPasswordComponent, canActivate: [loggedInGuard]},
       { path: 'register', component: RegisterComponent, canActivate: [loggedInGuard]},
-      { path: 'register/activate-account', component: ActivateAccountComponent},
+      { path: 'register/activate-account', component: ActivateAccountComponent, canActivate: [loggedInGuard]},
+      { path: 'admin/partners', component: PartnerViewComponent},
+      { path: 'admin/volunteers', component: VolunteerViewComponent, canActivate: [adminGuard]}
+
     ])
   ],
   providers: [
