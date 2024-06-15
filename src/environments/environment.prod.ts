@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://ec2-3-78-183-101.eu-central-1.compute.amazonaws.com',
+  apiBaseUrl: 'youria-LoadB-lxNhZnwrxEau-0c880cedece55ff6.elb.eu-central-1.amazonaws.com:8080',
   recaptcha: {
     siteKey: '6LcCxfUpAAAAADQiqKJcsUs6WxkItu7ofxckIGHO'
   }
