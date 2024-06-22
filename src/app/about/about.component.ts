@@ -1,6 +1,7 @@
 import { ViewportScroller } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, Subscriber, Subscription } from 'rxjs';
 
 @Component({
   selector: 'about',
@@ -8,22 +9,15 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './about.component.scss',
 })
 export class AboutComponent implements OnInit {
-  comp!: string | null;
-  constructor(private route: ActivatedRoute, private scroller: ViewportScroller, private router: Router) {}
 
-  ngOnInit(): void {
-      this.comp = this.route.snapshot.paramMap.get('comp');
-      this.router.navigate(["/"]);
-      if (this.comp) {
-        const elem = document.getElementById(this.comp);
+  constructor(private route: ActivatedRoute) {}
 
-        if (elem == null) return;
-        elem.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-          inline: "nearest"
-        });
-      }
-    }
+  ngOnInit() {
+    this.route.fragment.subscribe(f => {
+      const element = document.querySelector("#" + f)
+      if (element) element.scrollIntoView()
+    })
+  }
+
 
 }

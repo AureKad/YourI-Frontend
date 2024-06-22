@@ -39,9 +39,8 @@ import { SuccessComponent } from './donate/components/donate/donation-success/su
     BrowserAnimationsModule,
     RouterModule,
     RouterModule.forRoot([
-      { path: '', component: AboutComponent},
+      { path: '', component: DonateComponent},
       { path: 'about', component: AboutComponent},
-      { path: 'about/:comp', component: AboutComponent},
       { path: 'login', component: LoginComponent, canActivate: [loggedInGuard]},
       { path: 'login/reset/password', component: ForgotPasswordComponent, canActivate: [loggedInGuard]},
       { path: 'register', component: RegisterComponent, canActivate: [loggedInGuard]},
@@ -50,7 +49,12 @@ import { SuccessComponent } from './donate/components/donate/donation-success/su
       { path: 'admin/volunteers', component: VolunteerViewComponent, canActivate: [adminGuard]},
       { path: 'donate', component: DonateComponent},
       { path: 'donate/success', component: SuccessComponent}
-    ])
+    ],
+    {
+      scrollPositionRestoration: "enabled",
+      anchorScrolling: "enabled",
+      scrollOffset: [0, 64]
+    })
   ],
   providers: [
     provideAnimations(),

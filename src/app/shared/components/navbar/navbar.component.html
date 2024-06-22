@@ -14,25 +14,12 @@
             ABOUT
           </a>
           <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a ngbDropdownItem class="dropdown-item" routerLink="/about/mission">Our Mission</a>
-            <a ngbDropdownItem class="dropdown-item" routerLink="/about/facts">Facts</a>
-            <a ngbDropdownItem class="dropdown-item" routerLink="/about/values">Our Values</a>
-            <a ngbDropdownItem class="dropdown-item" routerLink="/about/vision">Our Vision</a>
-            <a ngbDropdownItem class="dropdown-item" routerLink="/about/profile">Our Profile</a>
-            <a ngbDropdownItem class="dropdown-item" routerLink="/about/forms">Join Our Cause</a>
-          </div>
-        </li>
-        <li ngbDropdown class="nav-item">
-          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            OUR PROJECTS
-          </a>
-          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a ngbDropdownItem class="dropdown-item" href="#">Our Unique Situation</a>
-            <a ngbDropdownItem class="dropdown-item" href="#">Emergency Projects</a>
-            <a ngbDropdownItem class="dropdown-item" href="#">Current Projects</a>
-            <a ngbDropdownItem class="dropdown-item" href="#">Feature Projects</a>
-            <a ngbDropdownItem class="dropdown-item" href="#">Future Projects</a>
-            <a ngbDropdownItem class="dropdown-item" href="#">Blog</a>
+            <a ngbDropdownItem class="dropdown-item" routerLink="/about" fragment="mission">Our Mission</a>
+            <a ngbDropdownItem class="dropdown-item" routerLink="/about" fragment="facts">Facts</a>
+            <a ngbDropdownItem class="dropdown-item" routerLink="/about" fragment="values">Our Values</a>
+            <a ngbDropdownItem class="dropdown-item" routerLink="/about" fragment="vision">Our Vision</a>
+            <a ngbDropdownItem class="dropdown-item" routerLink="/about" fragment="profile">Our Profile</a>
+            <a ngbDropdownItem class="dropdown-item" routerLink="/about" fragment="forms">Join Our Cause</a>
           </div>
         </li>
         <li ngbDropdown class="nav-item">
@@ -40,12 +27,9 @@
             SUPPORT US
           </a>
           <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a ngbDropdownItem class="dropdown-item" href="#">Donate</a>
-            <a ngbDropdownItem class="dropdown-item" href="#">Donation Use</a>
-            <a ngbDropdownItem class="dropdown-item" href="#">Contributors</a>
-            <a ngbDropdownItem class="dropdown-item" href="#">Shop</a>
-            <a ngbDropdownItem class="dropdown-item" href="#">Link to us</a>
-            <a ngbDropdownItem class="dropdown-item" href="#">Act</a>
+            <a ngbDropdownItem class="dropdown-item" routerLink="/donate" fragment="form">Donate</a>
+            <a ngbDropdownItem class="dropdown-item" routerLink="/donate" fragment="goal">Donation Goal</a>
+            <a ngbDropdownItem class="dropdown-item" routerLink="/donate" fragment="use">Donation Use</a>
           </div>
         </li>
         <li>
