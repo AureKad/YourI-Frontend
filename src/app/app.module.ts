@@ -39,7 +39,7 @@ import { SuccessComponent } from './donate/components/donate/donation-success/su
     BrowserAnimationsModule,
     RouterModule,
     RouterModule.forRoot([
-      { path: '', component: DonateComponent},
+      { path: '', component: AboutComponent},
       { path: 'about', component: AboutComponent},
       { path: 'login', component: LoginComponent, canActivate: [loggedInGuard]},
       { path: 'login/reset/password', component: ForgotPasswordComponent, canActivate: [loggedInGuard]},
