@@ -1,0 +1,17 @@
+@import "../../../../shared/SCSS/variables";
+
+.link {
+  color: $lighterGray;
+  transition-duration: 0.4s;
+  &:hover {
+    color: $darkerGray;
+  }
+}
+.activate{
+  background-color: black;
+  color: $veryLightGray;
+}
+
+.code-input {
+  color: $veryLightGray
+}

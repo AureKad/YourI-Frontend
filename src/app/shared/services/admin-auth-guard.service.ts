@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivateChildFn, CanActivateFn, Router, RouterStateSnapshot } from '@angular/router';
-import { JWTTokenService } from './jwttoken.service';
+import { JWTTokenService } from '../../authenticate/services/jwttoken.service';
 
 
 export const canActivate: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
@@ -8,7 +8,7 @@ export const canActivate: CanActivateFn = (route: ActivatedRouteSnapshot, state:
   const jwtTokenService = inject(JWTTokenService);
   const router = inject(Router);
 
-  let token = jwtTokenService.getDecodeToken();
+  let token = jwtTokenService.getDecodedToken();
 
 
   if (jwtTokenService.isLoggedIn() && token && token.role == "ROLE_ADMIN") 

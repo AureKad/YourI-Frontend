@@ -33,7 +33,7 @@ body {
   }
 }
 
-.button-white {
+.button-on-white {
   background-color: white; 
   border: 1px solid black;
   color: black;
@@ -56,7 +56,25 @@ body {
   border:1px solid $veryLightGray;
   padding: 8px 24px;
   font-weight: $medium_Weight;
+}
 
+.radio-on-white {
+  background-color: white; 
+  border: 1px solid black;
+  color: black;
+  padding: 9px 47px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: $medium_Font;
+  font-weight: $bolder_Weight;
+  cursor: pointer;
+
+  transition-duration: 0.4s;
+  &:hover:not([disabled]) {
+    background-color: $darkerGray;
+    color: $veryLightGray;
+  }
 }
 
 .btn {
@@ -72,6 +90,20 @@ body {
   color: $veryLightGray;
   border-radius: 0;
   border: 1px solid $darkerGray;
+  &::placeholder {
+    color: $mediumGray;
+  }
+  &:focus {
+    background-color: black;
+    color: $veryLightGray;
+  }
+}
+
+.input-on-white {
+  background-color: white;
+  color: black;
+  border-radius: 0;
+  border: 1px solid black;
   &::placeholder {
     color: $mediumGray;
   }

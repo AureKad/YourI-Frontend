@@ -1,0 +1,10 @@
+@import "../../../../shared/SCSS/variables";
+
+.progress {
+  background-color: $lightGray;
+  box-shadow: none;
+}
+
+.raised {
+  font-weight: $bolder_Weight;
+}

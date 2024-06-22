@@ -1,0 +1,79 @@
+@import "../../SCSS/variables";
+
+.footer {
+  background-color: black;
+  color: $veryLightGray;
+  padding: 32px;
+}
+
+.logo {
+  display: block;
+  width: 80px;
+  margin: auto;
+}
+
+.newsletter {
+
+  &__label {
+    font-weight: $title_Weight;
+  }
+
+
+  &__check {
+    background-color: black;
+    color: white;
+    width: 48px;
+    transition-duration: 0.4s;
+  
+    &:hover:not([disabled]) {
+      background-color: $darkGray;
+    }
+  }
+}
+
+
+
+.menu {
+  &__header {
+    font-weight: $title_Weight;
+  }
+  
+  &__item {
+    font-size: $small_Font;
+    transition-duration: 0.4s;
+    &:hover {
+      color: $darkerGray;
+    }
+  }
+}
+
+.socials {
+  text-align: center;
+
+  &__icon {
+    margin-right: 0;
+  }
+
+  &__label {
+    display: block;
+    margin-top: 8px;
+    font-size: $small_Font;
+  }
+}
+
+.policy {
+  text-align: center;
+  
+  span {
+    display: block;
+  }
+
+  &__header {
+    margin-bottom: 8px;
+  }
+
+  &__legal {
+    font-size: $verySmall_Font;
+    line-height: $medium_Height;
+  }
+}

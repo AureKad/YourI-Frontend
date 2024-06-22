@@ -1,0 +1,22 @@
+@import "../../../../shared/SCSS/variables";
+input{
+  &:checked +label {
+    background-color: black;
+    color: $veryLightGray;
+  }
+}
+
+label {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.custom {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.input-group-text {
+  border: 0;
+}

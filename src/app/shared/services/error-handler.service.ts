@@ -1,5 +1,5 @@
 import { ErrorHandler, Injectable, NgZone } from '@angular/core';
-import { AlertDialogComponent } from '../alertdialog/alertdialog.component';
+import { AlertDialogComponent } from '../components/alertdialog/alertdialog.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Injectable({
@@ -12,7 +12,6 @@ export class ErrorHandlerService extends ErrorHandler{
   }
 
    override handleError(err: any): void {
-    console.error(err);
 
     /*
     this.dialog.open(AlertDialog, {
