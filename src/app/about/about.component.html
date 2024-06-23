@@ -1,6 +1,7 @@
-<navbar-header></navbar-header>
-<navbar></navbar>
-<div class="container">
+
+<navbar-header #header></navbar-header>
+<navbar (scroll)="onScroll()" [ngClass]="navbarfixed ? 'sticky-top': ''"></navbar>
+<div class="container" [ngClass]="navbarfixed ? 'addPadding': ''">
   <mission id="mission"></mission>
   <facts id="facts"></facts>
   <values id="values"></values>

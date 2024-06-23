@@ -5,7 +5,8 @@
 
 
 html, body { 
-  height: 100%; 
+  min-height: 100%;
+  overflow-x: hidden;
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -35,5 +36,3 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: $mediumGray !important;
   font-size: $medium_Font !important;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

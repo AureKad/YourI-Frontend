@@ -1,6 +1,10 @@
 @import "../../SCSS/variables";
 @import "../../SCSS/mixins";
 
+:host {
+  display: block;
+}
+
 .logo {
   width: 50px;
   cursor:pointer;

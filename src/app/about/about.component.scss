@@ -1,6 +1,9 @@
-@import "../shared/SCSS/variables";
-@import "../shared/SCSS/mixins";
+.sticky-top {
+  position: fixed;
+  top:0;
+  width: 100%;
+}
 
-
-.container {
+.sticky-top + .container {
+  padding-top: 76px
 }
