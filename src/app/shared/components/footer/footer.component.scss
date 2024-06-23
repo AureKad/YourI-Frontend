@@ -1,9 +1,41 @@
 @import "../../SCSS/variables";
+@import "../../SCSS/mixins";
 
 .footer {
   background-color: black;
   color: $veryLightGray;
   padding: 32px;
+
+  @include small {
+    text-align: center;
+  }
+
+  &__links {
+    flex: 1 0 auto; 
+    @include small {
+      flex: 1 0 0%; 
+      width: 100%;
+    }
+    @include normal {
+      width: 100%;
+    }
+    @include large {
+      width: 75%;
+    }
+  }
+
+
+  &__link {
+    flex: 1 0 0%;
+    @include small {
+      width: 50%;
+      margin-bottom:32px;
+    }
+    @include normal {
+      width: 50%;
+      margin-bottom:32px;
+    }
+  }
 }
 
 .logo {
@@ -12,8 +44,21 @@
   margin: auto;
 }
 
-.newsletter {
+.news {
+  @include small {
+    display: none;
+  }
 
+  @include normal {
+    display: none;
+  }
+
+  @include large {
+    display: block;
+  }
+}
+
+.newsletter {
   &__label {
     font-weight: $title_Weight;
   }
@@ -49,6 +94,20 @@
 
 .socials {
   text-align: center;
+
+  @include small {
+    flex: 0 0 auto;
+    width: 40%;
+    margin-bottom: 32px;
+  }
+  @include normal {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
+  @include large {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
 
   &__icon {
     margin-right: 0;

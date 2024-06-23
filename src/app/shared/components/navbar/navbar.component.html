@@ -3,8 +3,8 @@
     <a class="navbar-brand">
       <img src="../../assets/imgs/YI_logo.png" class="logo" routerLink="/">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon hamburger"></span>
     </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -33,7 +33,7 @@
           </div>
         </li>
         <li>
-          <button type="button" class="button button-on-black">ENDANGERED LANGUAGES</button>
+          <button type="button" class="button button-on-black endangered__languages">ENDANGERED LANGUAGES</button>
         </li>
         <li *ngIf="!jwtUser?.firstName else loggedIn" ngbDropdown class="nav-item">
           <a class="nav-link dropdown-toggle" ngbDropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

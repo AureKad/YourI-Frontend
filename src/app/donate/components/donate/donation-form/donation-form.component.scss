@@ -1,4 +1,5 @@
 @import "../../../../shared/SCSS/variables";
+@import "../../../../shared/SCSS/mixins";
 input{
   &:checked +label {
     background-color: black;
@@ -8,15 +9,76 @@ input{
 
 label {
   &:not(:last-child) {
-    margin-right: 8px;
+    margin-right: 0px;
+    @include large {
+      margin-right: 8px;
+    }
   }
 }
 
 .custom {
   padding-left: 0;
   padding-right: 0;
+
+  @include small {
+    width: 98%;
+    margin: auto;
+  }
+  @include normal {
+    width: 98%;
+    margin: auto;
+  }
+  @include large {
+    width: 100%;
+    margin: auto;
+  }
 }
 
 .input-group-text {
   border: 0;
+}
+
+.donation {
+  &__amount {
+    @include small {
+      flex: 0 0 auto;
+      width: 49%;
+    }
+    @include normal {
+      flex: 0 0 auto;
+      width: 50%;
+    }
+    @include large {
+      flex: 1 0 0%;
+    }
+  }
+
+  &__frequency {
+    @include small {
+      flex: 0 0 auto;
+      width: 49%;
+    }
+    @include normal {
+      flex: 0 0 auto;
+      width: 50%;
+    }
+    @include large {
+      flex: 1 0 0%;
+    }
+  }
+
+}
+
+.button {
+  @include small {
+    width: 98%;
+    margin: auto;
+  }
+  @include normal {
+    width: 98%;
+    margin: auto;
+  }
+  @include large {
+    width: 100%;
+  }
 }

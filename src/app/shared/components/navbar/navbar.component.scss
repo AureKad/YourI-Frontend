@@ -1,4 +1,5 @@
 @import "../../SCSS/variables";
+@import "../../SCSS/mixins";
 
 .logo {
   width: 50px;
@@ -21,17 +22,54 @@
   background-color: black !important;
 }
 
-.button {
+.endangered__languages {
   font-size: $small_Font;
+
+  @include small {
+    display: none;
+  }  
+  
+  @include normal {
+    display: none;
+  }  
+  @include large {
+    display: block;
+  }  
 }
 
 .dropdown:hover .dropdown-menu {
   display: block;
   margin-top: 0; /* remove the gap so it doesn't close */
+  @include small {
+    background-color: black;
+  }  
+  
+  @include normal {
+    background-color: black;
+  }  
+  @include large {
+    background-color: white;
+  }  
+}
+
+.hamburger {
+  color:white;
 }
 
 .dropdown-item {
   transition-duration: 0.4s;
+
+  @include small {
+    color:$veryLightGray
+  }  
+  
+  @include normal {
+    color:$veryLightGray
+  }  
+
+  @include large {
+    color: black
+  }  
 }
 .dropdown-item:hover {
   background-color: black;

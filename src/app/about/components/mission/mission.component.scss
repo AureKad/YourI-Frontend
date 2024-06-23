@@ -1,14 +1,33 @@
+@import "../../../shared/SCSS/variables";
+@import "../../../shared/SCSS/mixins";
 
 .volunteer {
   margin-left: 8px;
 }
 
 button {
-  width: 30%;
+  width: 49%;
+
+  @include normal {
+    width: 30%;
+  }
+
+  @include large {
+    width: 30%;
+  }
 }
 
 .about {
   background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),url("../../../../assets/imgs/cartoon.png");
   background-repeat: repeat;
   background-size: contain;
+
+  &__container {
+    @include small {
+      text-align: center;
+    }
+    @include large {
+      max-width: 50%;
+    }
+  }
 }

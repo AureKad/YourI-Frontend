@@ -1,8 +1,23 @@
 @import "../../../shared/SCSS/variables";
+@import "../../../shared/SCSS/mixins";
 
 .register {
   background-color: black;
   color: $veryLightGray;
+
+  &__image {
+    @include small {
+      display: none;
+    }
+
+    @include normal {
+      display: none;
+    }
+
+    @include large {
+      display: block;
+    }
+  }
 }
 
 button {
@@ -18,14 +33,13 @@ button {
   }
 }
 
+
 .mat-select-panel {
   color: $veryLightGray !important;
   background-color: rgb(131, 111, 111);
   padding: 32px;
   border: 0;
 }
-
-
 
 //.mdc-text-field__input
 //.mat-mdc-text-field-wrapper

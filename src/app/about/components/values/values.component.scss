@@ -1,5 +1,41 @@
+@import "../../../shared/SCSS/variables";
+@import "../../../shared/SCSS/mixins";
+
 .image {
   width:40%;
   padding:20px;
   margin: auto;
+  @include small {
+    width: 100%;
+  }
+}
+
+.value {
+  &__container {
+    @include small {
+      flex-direction: column;
+      text-align: center;
+    }
+    @include normal {
+      
+    }
+  }
+
+  &__text {
+    @include large {
+      width: 50%;
+    }
+
+    &__title {
+      @include small {
+        margin-top: 36px;
+      }
+      @include normal {
+        margin-top: 36px;
+      }
+      @include large {
+        margin-top: 24px;
+      }
+    }
+  }
 }

@@ -1,3 +1,16 @@
+@import "../../../shared/SCSS/variables";
+@import "../../../shared/SCSS/mixins";
+
 .vision-card {
   padding: 12px;
+
+  @include small {
+    width: 100%;
+  }
+  @include normal {
+    width: 100%;
+  }
+  @include large {
+    width: 33.33%;
+  }
 }

@@ -1,3 +1,6 @@
+@import "../../../shared/SCSS/variables";
+@import "../../../shared/SCSS/mixins";
+
 .donate {
   &__form{
     width: 600px;
@@ -6,7 +9,15 @@
     width: 800px;
   }
   &__reason {
-    width: 1000px;
+    @include small {
+      width: fit-content;;
+    }
+    @include normal {
+      width: fit-content;;
+    }
+    @include large {
+      width: 1000px;
+    }
   }
   &__incitement {
     width: 800px;

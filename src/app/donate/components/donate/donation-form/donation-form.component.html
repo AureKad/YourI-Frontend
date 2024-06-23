@@ -2,24 +2,24 @@
 
   <div class="row justify-content-center mb-2">
     <input type="radio" class="btn-check" id="frequency1" autocomplete="off" value="once" formControlName="frequency" (change)="resetAmount()">
-    <label class="col radio-on-white donation_frequency" for="frequency1" >One Time</label>
+    <label class="col radio-on-white donation__frequency" for="frequency1" >One Time</label>
 
     <input type="radio" class="btn-check" id="frequency2" autocomplete="off" value="monthly" formControlName="frequency" (change)="resetAmount()">
-    <label class="col radio-on-white donation_frequency" for="frequency2">Monthly</label>
+    <label class="col radio-on-white donation__frequency" for="frequency2">Monthly</label>
   </div>
 
   <div class="row justify-content-center mb-2">
     <input type="radio" class="btn-check" id="amount1" value="{{25}}" formControlName="amount">
-    <label class="col radio-on-white donation_amount" for="amount1">€25</label>
+    <label class="col radio-on-white donation__amount" for="amount1">€25</label>
 
     <input type="radio" class="btn-check" id="amount2" value="{{50}}" formControlName="amount">
-    <label class="col radio-on-white donation_amount" for="amount2">€50</label>
+    <label class="col radio-on-white donation__amount" for="amount2">€50</label>
 
     <input type="radio" class="btn-check" id="amount3" value="{{100}}" formControlName="amount">
-    <label class="col radio-on-white donation_amount" for="amount3">€100</label>
+    <label class="col radio-on-white donation__amount" for="amount3">€100</label>
 
     <input type="radio" class="btn-check" id="amount4" value="{{250}}" formControlName="amount">
-    <label class="col radio-on-white donation_amount" for="amount4">€250</label>
+    <label class="col radio-on-white donation__amount" for="amount4">€250</label>
   </div>
 
   <div class="row mb-2" [ngClass]="{'d-none' : form.value.frequency=='monthly'}">

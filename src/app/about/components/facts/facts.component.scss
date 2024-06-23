@@ -1,5 +1,28 @@
+@import "../../../shared/SCSS/variables";
+@import "../../../shared/SCSS/mixins";
 
 .text-facts {
   display: inline-block;
   width: 49%;
+  @include small {
+    width: 100%;
+  }
 }
+
+.fact {
+  &__cards{
+    flex-direction: row;
+
+    @include small {
+      flex-direction: column;
+    }
+  }
+
+  &__texts{
+    @include small {
+      text-align: center;
+      flex-direction: column;
+    }
+  }
+}
+

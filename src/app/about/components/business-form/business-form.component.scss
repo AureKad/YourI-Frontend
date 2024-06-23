@@ -1,3 +1,7 @@
+@import "../../../shared/SCSS/variables";
+@import "../../../shared/SCSS/mixins";
+
+
 .form-group {
   margin-bottom: 16px;
 }
@@ -7,5 +11,8 @@
 }
 
 .button {
-  width: 20%;
+
+  @include large {
+    width: 20%;
+  }
 }
