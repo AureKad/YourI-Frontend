@@ -26,8 +26,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
   }
 
   @HostListener('window:scroll', []) onScroll() {
-    console.log(window.scrollY)
-    if (window.scrollY > this.headerHeight -1) 
+    if (window.scrollY > this.headerHeight) 
       this.navbarfixed = true
     else 
       this.navbarfixed = false
