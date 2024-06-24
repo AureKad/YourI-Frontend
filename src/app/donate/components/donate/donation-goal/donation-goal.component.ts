@@ -8,7 +8,7 @@ import { StripeService } from '../../../services/stripe.service';
 })
 export class DonationGoalComponent implements OnInit {
   raised = 0;
-  goal = 5000;
+  goal = 50000;
   raised_percentage!: number;
 
   constructor(private stripeService: StripeService) {}
